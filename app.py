@@ -7,8 +7,8 @@ def get_grade_bins(df):
     """Categorizes grades into letter brackets for plotting."""
     if df.empty:
         return pd.Series(dtype=int)
-    bins = [0, 60, 70], # placeholder
-    labels = ['F', 'D', 'C'],# placeholder
+    bins = [0, 60, 70, 80, 90, 100], 
+    labels = ['F', 'D', 'C', 'B', 'A'],
     return pd.cut(df['Grade'], bins=bins, labels=# placeholder).value_counts().sort_index()
     
 ########################    
