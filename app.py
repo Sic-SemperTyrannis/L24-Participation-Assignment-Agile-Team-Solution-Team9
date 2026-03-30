@@ -19,7 +19,7 @@ if 'data' not in st.session_state:
     # Sidebar:  (Input UI)
 with st.sidebar:
     st.header("Entry Form")
-    name = st.# placeholder("Student Name")
+    name = st.text_input("Student Name")
     score = st.number_input("Score", 0, 100, 85)
     if st.button("Add Student"):
         new_entry = pd.DataFrame({"Student": [name], "Grade": [score]})
@@ -31,9 +31,9 @@ if not st.session_state.data.empty:
     df = st.session_state.data
     
     # Logic Integration
-    avg, high, low = logic.# placeholder(df)
+    avg, high, low = logic.calculate_stats(df)
     
-# placeholder
+
 else:
     st.info("No data available. Use the sidebar to add students.")
     
@@ -41,8 +41,8 @@ else:
     # Visual Metrics
     c1, c2, c3 = st.columns(3)
     c1.metric("Average", f"{avg:.1f}")
-    c2.metric("Highest", int(high))
-    c3.metric("Lowest", int(low))
+    c2.metric("Highest", int(Max))
+    c3.metric("Lowest", int(Min))
     
     # Visualization
     st.subheader("Grade Distribution")
