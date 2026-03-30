@@ -8,5 +8,5 @@ if not df.empty:
         sts.metric(label="Total Students", value= len(df))
         #display the interactive table
         st.subheader("Student Grade List")
-        st.dataframe(df, use_container_width = True)
+        st.dataframe(df, use_container_width = True)#
 
